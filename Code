@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+     Scanner scanner = new Scanner(System.in);
+    String a = scanner.nextLine().toLowerCase();
+    String b = scanner.nextLine().toLowerCase();
+    scanner.close();
+
+    System.out.println(isAnagram(a, b) ? "Anagrams" : "Not Anagrams");
+}
+
+private static boolean isAnagram(String a, String b) {
+    String[] aArr = a.split("");
+    String[] bArr = b.split("");
+    Arrays.sort(aArr);
+    Arrays.sort(bArr);
+
+    return String.join("", aArr).equals(String.join("", bArr));
+}
+}
